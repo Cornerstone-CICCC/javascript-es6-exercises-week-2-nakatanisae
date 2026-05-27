@@ -6,9 +6,15 @@ Instruction
 Create a function named numberOfVowels that will receive a string and return the number of vowels in that string.
 
 */
-
 const numberOfVowels = function (data) {
   // Put your solution here
+  const vowels = data.split('').filter((letter) => {
+    if (letter === "a" || letter === "e" || letter === "i" || letter === "o" || letter === "u") {
+      return true
+    }
+  })
+  // [a]
+  return vowels.length //1
 };
 
 console.log(numberOfVowels("orange")); // 3
