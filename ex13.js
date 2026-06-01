@@ -5,11 +5,25 @@ Talking Calendar
 We will be given a date as a string (not a Date object). The date will always be formatted as YYYY/MM/DD. We will have to parse the given string and produce a human readable date.
 
 Instruction
-Create a function named talkingCalendar that takes in a date string with the format YYYY/MM/DD, and returns a new human readable date that looks like December 2nd, 2017.
+Create a function named talkingCalendar that takes in a date string with the format YYYY/MM/DD, 
+and returns a new human readable date that looks like December 2nd, 2017.
 */
 
 const talkingCalendar = function (date) {
   // Your code here
+  let result = '';
+  let dayString = '';
+  const splitLetters = date.split('/')
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const monthIndex = Number(splitLetters[1]) -1;
+  const monthName = months[monthIndex]
+  const day = Number(splitLetters[2])
+  if (day === 2) {dayString = '2nd';
+  } else {
+    dayString = `${day}th`
+  }
+
+  return result = `${monthName} ${dayString}, ${splitLetters[0]} `
 };
 
 console.log(talkingCalendar("2017/12/02")); // December 2nd, 2017
