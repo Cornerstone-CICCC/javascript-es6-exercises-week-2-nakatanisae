@@ -1,7 +1,8 @@
 /*In this exercise, we will be given a list of instructors and we will create a single object to organize them based on their course.
 
 Instruction
-Create a function named organizeInstructors that will receive an array of instructor objects, and will return a new object that has the following format:
+Create a function named organizeInstructors that will receive an array of instructor objects, 
+and will return a new object that has the following format:
 
 {
   CourseName: [instructors]
@@ -10,6 +11,16 @@ Create a function named organizeInstructors that will receive an array of instru
 
 const organizeInstructors = function (instructors) {
   // Put your solution here
+  const result = {};
+  for(const instructor of instructors){
+    if(!result[instructor.course]){
+      result[instructor.course] = [instructor.name];
+    } else {
+      result[instructor.course].push(instructor.name);
+    }
+  }
+  return result
+  
 };
 
 console.log(
