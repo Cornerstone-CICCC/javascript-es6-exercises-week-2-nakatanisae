@@ -1,10 +1,16 @@
 /*Caze Maker II
-We will still be given an input string to convert. However, this time, we'll also be given a casing style to work with. The following code block will describe all the casing styles to support. We may also receive an array of casing styles, and each of these should be applied.
+We will still be given an input string to convert. 
+However, this time, we'll also be given a casing style to work with. 
+The following code block will describe all the casing styles to support.
+We may also receive an array of casing styles, and each of these should be applied.
 
 Instruction
-Create a function named makeCaze that will receive an input string and one or more casing options. Return a new string that is formatted based on casing options:
+Create a function named makeCaze that will receive an input string 
+and one or more casing options. 
+Return a new string that is formatted based on casing options:
 
-Precedence of each of the casing styles are as follows, values higher in the list should be processed first:
+Precedence of each of the casing styles are as follows, 
+values higher in the list should be processed first:
 
 camel, pascal, snake, kebab, title
 vowel, consonant
@@ -17,6 +23,91 @@ For more information on casing styles, read Wikipedia's Special Case Styles for 
 
 const makeCaze = function (input, caze) {
   // Put your solution here
+  let cazeArray = [];
+  if(Array.isArray(caze)){
+    cazeArray = caze
+  } else {
+    cazeArray = [caze]
+  }
+
+  let result = input;
+
+  for (const currentCaze of cazeArray){
+
+  switch(currentCaze){
+    case'camel':
+      result = result
+        .split(' ')
+        .map((word, index) => {
+          if(index === 0){
+            return word.toLowerCase();
+          } else {
+            return word.charAt(0).toUpperCase() + word.slice(1)
+          }})
+        .join('');
+      break;
+
+    case'pascal':
+      const pascalWords = result.split(' ');
+      const pascalArray = [];
+      for(const word of pascalWords){
+        pascalArray.push(word.charAt(0).toUpperCase() + word.slice(1))
+      }
+      result = pascalArray.join('');
+      break;
+
+    case'snake':
+      result = result.replaceAll(' ', '_');
+      break;
+
+    case'kebab':
+      result = result.replaceAll(' ', '-');
+      break;
+    
+    case'title':
+      result = result
+        .split(' ')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+      break;
+
+    case'vowel':
+      result = result
+        .split('')
+        .map(char => {
+          if(['a', 'e', 'i', 'o', 'u'].includes(char)){
+            return char.toUpperCase()
+          } else {
+            return char
+          }
+        })
+        .join('');
+      break;
+
+    case'consonant':
+      result = result
+        .split('')
+        .map(char => {
+          if(!['a', 'e', 'i', 'o', 'u'].includes(char)){
+            return char.toUpperCase()
+          } else {
+            return char
+          }
+        })
+        .join('');
+      break;
+
+    case'upper':
+      result = result.toUpperCase();
+      break;
+
+    case'lower':
+      result = result.toLowerCase();
+      break;
+  }
+  }
+  return result;
+
 };
 
 console.log(makeCaze("this is a string", "camel")); // thisIsAString
