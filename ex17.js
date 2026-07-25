@@ -28,7 +28,7 @@ const urlDecode = function (text) {
   for(const splitLetter of splitWords){
     const splitParts = splitLetter.split('=')
   
-    const key = splitParts[0];
+    const key = splitParts[0]; // Feedback: decode "%20" in keys too, e.g. splitParts[0].replaceAll("%20", " ").
     const value = splitParts[1].replaceAll('%20',' ');
     result[key] = value;
   }

@@ -16,9 +16,9 @@ const multiplicationTable = function (maxValue) {
   const NumberTable = maxValue
   for(let i = 1; i <= maxValue; i++){
     for(let j = 1; j <= maxValue; j++){
-      result += (i * j) + ' ';
+      result += (i * j) + ' '; // Feedback: avoid the extra space at the end of each row; join row values with " ".
     }
-    result += '\n'
+    result += '\n' // Feedback: do not add a trailing newline after the final row.
   }
   return result
 };

@@ -33,7 +33,7 @@ const checkAir = function (samples, threshold) {
   }, 0)
 
   const share = numberOfDirty / samples.length
-  if( share > threshold){
+  if( share > threshold){ // Feedback: use share >= threshold because "Clean" requires the dirty ratio to be below the threshold.
     return 'Polluted'
   } else {
     return 'Clean'

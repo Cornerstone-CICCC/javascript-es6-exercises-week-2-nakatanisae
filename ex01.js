@@ -9,8 +9,8 @@ that will receive an array of numbers and return the sum of the two largest numb
 
 const sumLargestNumbers = function (data) {
   // Put your solution here
-  let largestNum = 0
-  let secondLargestNum = 0
+  let largestNum = 0 // Feedback: initialize from the data or -Infinity so negative inputs can still produce the correct largest number.
+  let secondLargestNum = 0 // Feedback: this should not start at 0 unless the input is guaranteed to contain positive numbers.
   
 
   data.forEach(num => {

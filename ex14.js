@@ -31,15 +31,15 @@ const calculateChange = function (total, cash) {
   // Your code here
 
   const currencyValues = [
-    {name: 'twenthDollars', value: 2000},
-    {name: 'tenDollars', value: 1000},
-    {name: 'fiveDollars', value: 500},
-    {name: 'twoDollars', value: 200},
+    {name: 'twenthDollars', value: 2000}, // Feedback: expected key is "twentyDollar" with this exact spelling.
+    {name: 'tenDollars', value: 1000}, // Feedback: expected key is "tenDollar".
+    {name: 'fiveDollars', value: 500}, // Feedback: expected key is "fiveDollar".
+    {name: 'twoDollars', value: 200}, // Feedback: expected key is "twoDollar".
     {name: 'oneDollar', value: 100},
-    {name: 'Quarter', value: 25},
-    {name: 'Dime', value: 10},
-    {name: 'Nickel', value: 5},
-    {name: 'Penny', value: 1},
+    {name: 'Quarter', value: 25}, // Feedback: expected key is lowercase "quarter".
+    {name: 'Dime', value: 10}, // Feedback: expected key is lowercase "dime".
+    {name: 'Nickel', value: 5}, // Feedback: expected key is lowercase "nickel".
+    {name: 'Penny', value: 1}, // Feedback: expected key is lowercase "penny".
     
   ] 
 

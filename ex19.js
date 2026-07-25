@@ -88,7 +88,7 @@ const generateBoard = function(whiteQueen, blackQueen){
   return board;
 };
 
-  const queenThreat = function (board){
+  const queenThreat = function (board){ // Feedback: export both functions at the end with module.exports = { generateBoard, queenThreat }.
     const queens = [];
 
     for(let row = 0; row < 8; row++){
@@ -105,7 +105,7 @@ const generateBoard = function(whiteQueen, blackQueen){
 
     if(
       q1[0] === q2[0] ||
-      q1[1] ===q1[1] ||
+      q1[1] ===q1[1] || // Feedback: compare q1[1] === q2[1] for the same-column check.
       Math.abs(q1[0] - q2[0]) === Math.abs(q1[1] - q2[1])
     ){
       return true;

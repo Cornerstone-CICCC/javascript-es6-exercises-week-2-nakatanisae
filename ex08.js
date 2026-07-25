@@ -22,7 +22,7 @@ const repeatNumbers = function (data) {
     return String(value).repeat(times);
   })
 
-  return numbersData
+  return numbersData // Feedback: return numbersData.join(", ") so the function returns the required string, not an array.
 };
 
 console.log(repeatNumbers([[1, 10]])); // 1111111111

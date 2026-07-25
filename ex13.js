@@ -18,12 +18,12 @@ const talkingCalendar = function (date) {
   const monthIndex = Number(splitLetters[1]) -1;
   const monthName = months[monthIndex]
   const day = Number(splitLetters[2])
-  if (day === 2) {dayString = '2nd';
+  if (day === 2) {dayString = '2nd'; // Feedback: handle 1st, 2nd, 3rd, 21st, 22nd, 23rd, 31st, and keep 11th/12th/13th as "th".
   } else {
     dayString = `${day}th`
   }
 
-  return result = `${monthName} ${dayString}, ${splitLetters[0]} `
+  return result = `${monthName} ${dayString}, ${splitLetters[0]} ` // Feedback: remove the trailing space after the year.
 };
 
 console.log(talkingCalendar("2017/12/02")); // December 2nd, 2017
